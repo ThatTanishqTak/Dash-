@@ -27,6 +27,14 @@ void Player::update()
 		playerPos.x += speed.x;
 
 	// Check collision
+	if (playerPos.x <= 0)
+		playerPos.x = 0;
+	if (playerPos.x + 50.0f >= game_obj->windowWidth)
+		playerPos.x = game_obj->windowWidth - 50.0f;
+	if (playerPos.y <= 0)
+		playerPos.y = 0;
+	if (playerPos.y + 100.0f >= game_obj->windowHeight)
+		playerPos.y = game_obj->windowHeight - 100.0f;
 }
 
 void Player::render()
